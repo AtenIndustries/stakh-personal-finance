@@ -1,4 +1,4 @@
-namespace Stakh.Models
+namespace Stakh.Models.Interfaces
 {
     public interface IAuditable
     {

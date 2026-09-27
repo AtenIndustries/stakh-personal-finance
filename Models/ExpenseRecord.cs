@@ -1,4 +1,5 @@
 using SQLite;
+using Stakh.Models.Interfaces;
 
 namespace Stakh.Models
 {
@@ -16,11 +17,7 @@ namespace Stakh.Models
         public bool Closed { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-
-        [Ignore]
-        public List<ReserveFundRecord> ReserveFundRecords { get; set; } = [];
-        [Ignore]
-        public List<ReserveFund> ReserveFunds { get; set; } = [];
+ 
         [Ignore]
         public ExpenseRecordCategory ExpenseRecordCategory { get; set; } = new();
     }

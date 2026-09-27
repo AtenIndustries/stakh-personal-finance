@@ -1,5 +1,6 @@
 using SQLite;
 using Stakh.Models;
+using Stakh.Models.Interfaces;
 
 namespace Stakh.Data
 {
