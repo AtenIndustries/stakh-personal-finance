@@ -3,25 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Stakh.ViewModels"
              x:Class="Stakh.MainPage"
-             x:DataType="vm:MainViewModel"
+             x:DataType="vm:MainPageViewModel"
              Title="Balances">
 
-    <Grid RowDefinitions="*,Auto" Padding="16" RowSpacing="12">
-        <CollectionView Grid.Row="0" ItemsSource="{Binding Balances}">
+    <Grid RowDefinitions="*,Auto"
+            Padding="16"
+            RowSpacing="12">
+        <CollectionView Grid.Row="0"
+                ItemsSource="{Binding Balances}">
             <CollectionView.EmptyView>
                 <Label Text="No balances yet."
-                       HorizontalOptions="Center" VerticalOptions="Center" />
+                       HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
             </CollectionView.EmptyView>
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="vm:BalanceViewModel">
-                    <Border Padding="16" Margin="0,4">
-                        <Label Text="{Binding Name}" FontSize="18" />
+                <DataTemplate x:DataType="vm:BalanceDetailsViewModel">
+                    <Border Padding="16"
+                            Margin="0,4"
+                            Background="Transparent">
+                        <!-- Adds click to border-->
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BindingContext.LoadBalanceCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+                            CommandParameter="{Binding .}"
+                            x:DataType="{x:Null}"/>
+                        </Border.GestureRecognizers>
+
+                        <Label Text="{Binding Name}"
+                                FontSize="18"/>
                     </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <Button Grid.Row="1" Text="Add balance"
-                Command="{Binding AddBalanceCommand}" />
+        <Button Grid.Row="1"
+                Text="Add balance"
+                Command="{Binding AddBalanceCommand}"/>
     </Grid>
 </ContentPage>

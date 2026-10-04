@@ -36,6 +36,12 @@ namespace Stakh.Data
             return entity.Id;
         }
 
+        public async Task<T> GetAsync<T>(int id) where T : IIdentifiable, IAuditable, new()
+        {
+            await InitAsync();
+            return await _db.Table<T>().FirstAsync(x => x.Id == id);
+        }
+
         public async Task<List<T>> GetAllAsync<T>() where T : IIdentifiable, IAuditable, new()
         {
             await InitAsync();

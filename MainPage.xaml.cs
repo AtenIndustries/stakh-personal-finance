@@ -4,9 +4,9 @@ namespace Stakh;
 
 public partial class MainPage : ContentPage
 {
-    private readonly MainViewModel _vm;
+    private readonly MainPageViewModel _vm;
 
-    public MainPage(MainViewModel vm)
+    public MainPage(MainPageViewModel vm)
     {
         InitializeComponent();
         BindingContext = _vm = vm;
