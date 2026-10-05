@@ -1,5 +1,5 @@
 ﻿using Stakh.Features.Balances;
-using Stakh.Views;
+using Stakh.Features.MonthBalances;
 
 namespace Stakh;
 
@@ -10,6 +10,6 @@ public partial class AppShell : Shell
 		InitializeComponent();
 		Routing.RegisterRoute(nameof(AddBalancePage), typeof(AddBalancePage));
 		Routing.RegisterRoute(nameof(AddMonthBalancePage), typeof(AddMonthBalancePage));
-		Routing.RegisterRoute(nameof(BalanceDetailsPage), typeof(BalanceDetailsPage));
+		Routing.RegisterRoute(nameof(MonthBalanceListPage), typeof(MonthBalanceListPage));
 	}
 }

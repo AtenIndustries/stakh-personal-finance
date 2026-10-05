@@ -17,7 +17,7 @@
                         VerticalOptions="Center"/>
             </CollectionView.EmptyView>
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="vm:BalanceDetailsViewModel">
+                <DataTemplate x:DataType="vm:BalanceEntryViewModel">
                     <Border Padding="16"
                             Margin="0,4"
                             Background="Transparent">

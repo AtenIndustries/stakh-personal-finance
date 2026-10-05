@@ -3,7 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using Stakh.Core.Services;
 using Stakh.Core.Models;
 
-namespace Stakh.ViewModels;
+namespace Stakh.Features.MonthBalances;
 
 [QueryProperty(nameof(BalanceId), "balanceId")]
 public partial class AddMonthBalanceViewModel(DatabaseService db) : ObservableObject

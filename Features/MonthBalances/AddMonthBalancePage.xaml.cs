@@ -1,6 +1,4 @@
-using Stakh.ViewModels;
-
-namespace Stakh.Views;
+namespace Stakh.Features.MonthBalances;
 public partial class AddMonthBalancePage : ContentPage
 {
     public AddMonthBalancePage(AddMonthBalanceViewModel vm)

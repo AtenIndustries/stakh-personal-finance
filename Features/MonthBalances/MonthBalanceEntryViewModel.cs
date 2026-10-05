@@ -1,7 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using Stakh.Core.Services;
 
-namespace Stakh.Features.Balances
+namespace Stakh.Features.MonthBalances
 {
     public class MonthBalanceEntryViewModel(DatabaseService db) : ObservableObject
     {

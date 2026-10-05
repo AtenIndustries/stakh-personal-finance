@@ -2,13 +2,11 @@ using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Stakh.Core.Services;
-using Stakh.Core.Models;
-using Stakh.Views;
 
-namespace Stakh.Features.Balances
+namespace Stakh.Features.MonthBalances
 {
     [QueryProperty(nameof(BalanceId), "BalanceId")]
-    public partial class BalanceDetailsViewModel(DatabaseService db) : ObservableObject
+    public partial class MonthBalanceListViewModel(DatabaseService db) : ObservableObject
     {
         
         [ObservableProperty]
@@ -18,7 +16,7 @@ namespace Stakh.Features.Balances
         public ObservableCollection<MonthBalanceEntryViewModel> MonthBalances { get; set; } = [];
 
         [RelayCommand]
-        private async Task LoadBalanceDetailsAsync()
+        private async Task LoadMonthBalanceListAsync()
         {
             var balance = await db.LoadBalanceAsync(BalanceId);
             MonthBalances.Clear();

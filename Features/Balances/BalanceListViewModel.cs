@@ -4,13 +4,12 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Stakh.Core.Services;
 using Stakh.Core.Models;
-using Stakh.Views;
 
 namespace Stakh.Features.Balances
 {
     public partial class BalanceListViewModel(DatabaseService db) : ObservableObject
     {
-        public ObservableCollection<BalanceDetailsViewModel> Balances { get; } = [];
+        public ObservableCollection<BalanceEntryViewModel> Balances { get; } = [];
 
         [RelayCommand]
         private async Task LoadBalancesAsync()
@@ -19,9 +18,9 @@ namespace Stakh.Features.Balances
             Balances.Clear();
             foreach (var balance in dataBalances)
             {
-                Balances.Add(new BalanceDetailsViewModel(db)
-                { //TODO: Use AutoMapper to map Balance to BalanceDetailsViewModel
-                    BalanceId = balance.Id,
+                Balances.Add(new BalanceEntryViewModel()
+                { //TODO: Use AutoMapper to map Balance to MonthBalanceListViewModel
+                    Id = balance.Id,
                     Name = balance.Name
                 });
             }
@@ -31,12 +30,12 @@ namespace Stakh.Features.Balances
         private async Task AddBalanceAsync(string name) => await Shell.Current.GoToAsync(nameof(AddBalancePage));
 
         [RelayCommand]
-        private async Task LoadBalanceAsync(BalanceDetailsViewModel balance)
+        private async Task LoadBalanceAsync(BalanceEntryViewModel balance)
         {
             if (balance == null) return;
             try
             {
-                await Shell.Current.GoToAsync($"{nameof(BalanceDetailsPage)}?BalanceId={balance.BalanceId}");
+                await Shell.Current.GoToAsync($"{nameof(MonthBalances.MonthBalanceListPage)}?BalanceId={balance.Id}");
             }
             catch (Exception ex)
             {

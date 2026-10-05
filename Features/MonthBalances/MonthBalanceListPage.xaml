@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:Stakh.Features.Balances"
-             x:Class="Stakh.Features.Balances.BalanceDetailsPage"
-             x:DataType="vm:BalanceDetailsViewModel"
+             xmlns:vm="clr-namespace:Stakh.Features.MonthBalances"
+             x:Class="Stakh.Features.MonthBalances.MonthBalanceListPage"
+             x:DataType="vm:MonthBalanceListViewModel"
              Title="Balance Details">
 
 
