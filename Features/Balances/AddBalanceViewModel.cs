@@ -3,7 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using Stakh.Core.Services;
 using Stakh.Core.Models;
 
-namespace Stakh.ViewModels;
+namespace Stakh.Features.Balances;
 public partial class AddBalanceViewModel(DatabaseService db) : ObservableObject
 { 
 
