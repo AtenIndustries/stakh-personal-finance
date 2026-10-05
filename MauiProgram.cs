@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Stakh.Features.Balances;
+using Stakh.Features.ExpenseReports;
 using Stakh.Features.MonthBalances;
 
 namespace Stakh;
@@ -12,11 +13,14 @@ public static class MauiProgram
 		builder.Services.AddSingleton<Core.Services.DatabaseService>();
 
 		builder.Services.AddTransient<BalanceListViewModel>();
-		builder.Services.AddTransient<BalanceList>();
+		//builder.Services.AddTransient<BalanceList>();
 		builder.Services.AddTransient<AddBalanceViewModel>();
 		builder.Services.AddTransient<AddMonthBalanceViewModel>();
 		builder.Services.AddTransient<MonthBalanceListViewModel>();
-		builder.Services.AddTransient<AddBalancePage>();
+		builder.Services.AddTransient<ExpenseReportListViewModel>();
+		builder.Services.AddTransient<AddExpenseReportViewModel>();
+		//builder.Services.AddTransient<AddBalancePage>();
+
 
 		builder
 			.UseMauiApp<App>()

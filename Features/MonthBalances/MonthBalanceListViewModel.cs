@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Diagnostics; 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Stakh.Core.Services;
@@ -8,10 +9,10 @@ namespace Stakh.Features.MonthBalances
     [QueryProperty(nameof(BalanceId), "BalanceId")]
     public partial class MonthBalanceListViewModel(DatabaseService db) : ObservableObject
     {
-        
+
         [ObservableProperty]
         private int balanceId;   // use the same type as balance.Id  
- 
+
         public string Name { get; set; } = string.Empty;
         public ObservableCollection<MonthBalanceEntryViewModel> MonthBalances { get; set; } = [];
 
@@ -33,7 +34,23 @@ namespace Stakh.Features.MonthBalances
         }
 
         [RelayCommand]
-        private async Task AddMonthBalanceAsync() => await Shell.Current.GoToAsync($"{nameof(AddMonthBalancePage)}?balanceId={balanceId}");
+        private async Task AddMonthBalanceAsync() => await Shell.Current.GoToAsync($"{nameof(AddMonthBalancePage)}?balanceId={BalanceId}");
+
+        [RelayCommand]
+        private async Task LoadMonthBalanceAsync(MonthBalanceEntryViewModel monthBalance)
+        {
+            if (monthBalance == null) return;
+            try
+            {
+                await Shell.Current.GoToAsync($"{nameof(ExpenseReports.ExpenseReportListPage)}?MonthBalanceId={monthBalance.Id}");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                // temporarily, to see it on screen:
+                await Shell.Current.DisplayAlert("Navigation error", ex.ToString(), "OK");
+            }
+        }
 
     }
 }
