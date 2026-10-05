@@ -35,6 +35,6 @@ public partial class AddMonthBalanceViewModel(DatabaseService db) : ObservableOb
             Year = int.Parse(YearText!),
             Month = int.Parse(MonthText!)
         });
-        await Shell.Current.GoToAsync(".."); // back to MainPage
+        await Shell.Current.GoToAsync(".."); // back to BalanceList
     }
 }

@@ -17,6 +17,6 @@ public partial class AddBalanceViewModel(DatabaseService db) : ObservableObject
     private async Task SaveAsync()
     { 
         await db.CreateAsync(new Balance { Name = Name.Trim() });
-        await Shell.Current.GoToAsync(".."); // back to MainPage
+        await Shell.Current.GoToAsync(".."); // back to BalanceList
     }
 }

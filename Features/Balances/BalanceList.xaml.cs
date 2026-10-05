@@ -1,10 +1,10 @@
 ﻿namespace Stakh.Features.Balances
 {
-    public partial class MainPage : ContentPage
+    public partial class BalanceList : ContentPage
     {
-        private readonly MainPageViewModel _vm;
+        private readonly BalanceListViewModel _vm;
 
-        public MainPage(MainPageViewModel vm)
+        public BalanceList(BalanceListViewModel vm)
         {
             InitializeComponent();
             BindingContext = _vm = vm;

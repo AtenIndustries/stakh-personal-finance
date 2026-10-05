@@ -12,8 +12,8 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder.Services.AddSingleton<Core.Services.DatabaseService>();
 
-		builder.Services.AddTransient<MainPageViewModel>();
-		builder.Services.AddTransient<MainPage>();
+		builder.Services.AddTransient<BalanceListViewModel>();
+		builder.Services.AddTransient<BalanceList>();
 		builder.Services.AddTransient<AddBalanceViewModel>();
 		builder.Services.AddTransient<AddMonthBalanceViewModel>();
 		builder.Services.AddTransient<BalanceDetailsViewModel>();

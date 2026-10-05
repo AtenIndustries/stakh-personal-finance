@@ -8,7 +8,7 @@ using Stakh.Views;
 
 namespace Stakh.Features.Balances
 {
-    public partial class MainPageViewModel(DatabaseService db) : ObservableObject
+    public partial class BalanceListViewModel(DatabaseService db) : ObservableObject
     {
         public ObservableCollection<BalanceDetailsViewModel> Balances { get; } = [];
 
