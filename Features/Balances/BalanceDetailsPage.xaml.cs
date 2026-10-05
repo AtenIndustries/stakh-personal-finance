@@ -1,6 +1,6 @@
 using Stakh.ViewModels; 
 
-namespace Stakh.Views;
+namespace Stakh.Features.Balances;
 
 public partial class BalanceDetailsPage : ContentPage
 {

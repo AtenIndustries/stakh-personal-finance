@@ -1,8 +1,8 @@
 using SQLite;
-using Stakh.Models;
-using Stakh.Models.Interfaces;
+using Stakh.Core.Models;
+using Stakh.Core.Models.Interfaces;
 
-namespace Stakh.Data
+namespace Stakh.Core.Services
 {
     public partial class DatabaseService
     {

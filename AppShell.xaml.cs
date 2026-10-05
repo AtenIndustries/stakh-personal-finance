@@ -1,4 +1,5 @@
-﻿using Stakh.Views;
+﻿using Stakh.Features.Balances;
+using Stakh.Views;
 
 namespace Stakh;
 

@@ -1,7 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Stakh.Data;
-using Stakh.Models;
+using Stakh.Core.Services;
+using Stakh.Core.Models;
 
 namespace Stakh.ViewModels;
 

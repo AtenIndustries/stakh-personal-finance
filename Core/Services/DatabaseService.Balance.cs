@@ -1,7 +1,7 @@
 using SQLite;
-using Stakh.Models;
+using Stakh.Core.Models;
 
-namespace Stakh.Data;
+namespace Stakh.Core.Services;
 
 public partial class DatabaseService
 {

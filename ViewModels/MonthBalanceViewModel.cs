@@ -1,5 +1,5 @@
 using CommunityToolkit.Mvvm.ComponentModel;
-using Stakh.Data;
+using Stakh.Core.Services;
 
 namespace Stakh.ViewModels
 {

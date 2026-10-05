@@ -1,7 +1,7 @@
 using SQLite;
-using Stakh.Models.Interfaces;
+using Stakh.Core.Models.Interfaces;
 
-namespace Stakh.Models
+namespace Stakh.Core.Models
 {
     public class ExpenseReport : IAuditable, IIdentifiable //can have multiple expense records, reserve funds and incomes
     {

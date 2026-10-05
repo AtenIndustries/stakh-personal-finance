@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Stakh.Features.Balances;
 using Stakh.ViewModels;
 using Stakh.Views;
 
@@ -9,7 +10,7 @@ public static class MauiProgram
 	public static MauiApp CreateMauiApp()
 	{
 		var builder = MauiApp.CreateBuilder();
-		builder.Services.AddSingleton<Data.DatabaseService>();
+		builder.Services.AddSingleton<Core.Services.DatabaseService>();
 
 		builder.Services.AddTransient<MainPageViewModel>();
 		builder.Services.AddTransient<MainPage>();

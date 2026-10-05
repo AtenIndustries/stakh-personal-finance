@@ -1,13 +1,16 @@
 using SQLite;
-using Stakh.Models.Interfaces;
+using Stakh.Core.Models.Interfaces;
 
-namespace Stakh.Models
+namespace Stakh.Core.Models
 {
-    public class ExpenseRecordCategory : IAuditable, IIdentifiable
+    public class ReserveFundRecord : IAuditable, IIdentifiable
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+        [Indexed] 
+        public int ReserveFundId { get; set; }
         public string Name { get; set; } = string.Empty;
+        public decimal Amount { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
     }

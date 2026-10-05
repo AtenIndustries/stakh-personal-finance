@@ -1,17 +1,17 @@
 using SQLite;
-using Stakh.Models.Interfaces;
+using Stakh.Core.Models.Interfaces;
 
-namespace Stakh.Models
+namespace Stakh.Core.Models
 {
-    public class Income : IAuditable, IIdentifiable
+    public class Balance : IAuditable, IIdentifiable
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        [Indexed]
-        public int ExpenseReportId { get; set; }
         public string Name { get; set; } = string.Empty;
-        public decimal Amount { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+
+        [Ignore]
+        public List<MonthBalance> MonthBalances { get; set; } = [];
     }
 }

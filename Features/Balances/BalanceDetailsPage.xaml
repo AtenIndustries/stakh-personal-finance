@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:Stakh.ViewModels"
-             x:Class="Stakh.Views.BalanceDetailsPage"
+             xmlns:vm="clr-namespace:Stakh.Features.Balances"
+             x:Class="Stakh.Features.Balances.BalanceDetailsPage"
              x:DataType="vm:BalanceDetailsViewModel"
              Title="Balance Details">
 
@@ -32,14 +32,13 @@
             </CollectionView.ItemsLayout>
 
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="vm:MonthBalanceViewModel">
+                <DataTemplate x:DataType="vm:MonthBalanceEntryViewModel">
                     <Border StrokeShape="RoundRectangle 10"
                             Padding="16"
                             BackgroundColor="{AppThemeBinding Light=#F8F9FA, Dark=#1E1E1E}"
                             Stroke="{AppThemeBinding Light=#E0E0E0, Dark=#2C2C2C}">
                         <Grid ColumnDefinitions="*, Auto" VerticalOptions="Center">
-                            <VerticalStackLayout Grid.Column="0" Spacing="4">
-                                <Label Text="{Binding Name}" FontSize="16" FontAttributes="Bold"/>
+                            <VerticalStackLayout Grid.Column="0" Spacing="4"> 
                                 <Label Text="{Binding Month, StringFormat='Month: {0}'}" FontSize="12" TextColor="Gray"/>
                                 <Label Text="{Binding Year, StringFormat='Year: {0}'}" FontSize="12" TextColor="Gray"/>
                             </VerticalStackLayout>
